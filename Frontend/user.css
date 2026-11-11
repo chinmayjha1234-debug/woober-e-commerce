@@ -1,0 +1,616 @@
+/*
+  user.css
+  Styles for the shop pages: products, product details, cart, orders, dashboard and the admin pages.
+  The colours, fonts, header and footer come from common.css, so this file only
+  adds the extra parts these pages need (cards, forms, lists).
+*/
+
+/* ---------- Page basics ---------- */
+
+.user-page {
+  background: var(--soft);
+}
+
+/* The new pages use no animations. */
+.user-page .button,
+.user-page .info-card {
+  transition: none;
+}
+
+/* The "hidden" attribute must win over the button style */
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- Blue title strip at the top of each page ---------- */
+
+.user-hero {
+  padding: 38px 0;
+  background: #edf4fa;
+  border-bottom: 1px solid var(--line);
+}
+
+.user-hero h1 {
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.2;
+  margin: 8px 0 6px;
+}
+
+.user-hero p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.user-main {
+  padding: 30px 0 20px;
+}
+
+/* ---------- White box (used for profile, overview, lists) ---------- */
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.panel h2 {
+  font-size: 20px;
+  margin: 0 0 14px;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.panel-head h2 {
+  margin: 0;
+}
+
+/* ---------- Dashboard: profile and overview side by side ---------- */
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.profile-list {
+  margin: 0;
+}
+
+.profile-list div {
+  display: flex;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.profile-list div:last-child {
+  border-bottom: 0;
+}
+
+.profile-list dt {
+  width: 110px;
+  flex: none;
+  color: var(--muted);
+}
+
+.profile-list dd {
+  margin: 0;
+  word-break: break-word;
+}
+
+/* The four small number boxes */
+.stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.stat {
+  padding: 16px;
+  background: var(--soft);
+  border-radius: 8px;
+}
+
+.stat b {
+  display: block;
+  font-size: 26px;
+  color: var(--blue);
+}
+
+.stat span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- Dashboard: the two quick links ---------- */
+
+.quick-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.quick-links .info-card {
+  display: block;
+}
+
+.quick-links .info-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--blue);
+}
+
+/* ---------- Item cards (dashboard and user interface page) ---------- */
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.item-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The picture area of a card */
+.item-card .media {
+  aspect-ratio: 4 / 3;
+  background: var(--soft);
+  display: grid;
+  place-items: center;
+}
+
+.item-card .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Shown instead of a picture when a product has no image */
+.no-image {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 50px;
+  background: #edf4fa;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.item-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.item-body h3 {
+  margin: 0;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+.item-body p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  word-break: break-word;
+}
+
+.item-card .full-desc {
+  white-space: pre-wrap;
+}
+
+.item-card .text-link {
+  margin-top: 6px;
+}
+
+.item-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Small rounded label, for example the category */
+.chip {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 20px;
+  background: #edf4fa;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+/* Message shown when there is nothing to display */
+.empty {
+  padding: 30px 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.empty a {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* ---------- Update page: form on the left, list on the right ---------- */
+
+.manage-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.manage-layout .form-card {
+  max-width: none;
+  margin: 0;
+}
+
+.form-card .field-hint {
+  font-size: 11px;
+  color: #777;
+  margin: 5px 0 0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.form-message.error {
+  color: #b3261e;
+}
+
+/* Extra button styles */
+.button-outline {
+  background: #fff;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+.button-outline:hover {
+  background: #eaf2fa;
+}
+
+.button-danger {
+  background: #fff;
+  color: #b3261e;
+  border: 1px solid #e3b5b1;
+}
+
+.button-danger:hover {
+  background: #fdeeed;
+}
+
+/* One row in the product list (admin) and the cart */
+.manage-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.manage-row:last-child {
+  border-bottom: 0;
+}
+
+.manage-row .thumb {
+  width: 72px;
+  height: 56px;
+  flex: none;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--soft);
+}
+
+.manage-row .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.manage-row .info {
+  flex: 1;
+  min-width: 0;
+}
+
+.manage-row .info b {
+  display: block;
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.manage-row .info span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.manage-row .actions {
+  display: flex;
+  gap: 8px;
+  flex: none;
+}
+
+/* ---------- Products page: search box ---------- */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.toolbar select {
+  padding: 9px;
+  border: 1px solid #d7dce2;
+  border-radius: 5px;
+  font-size: 13px;
+  background: #fff;
+}
+
+.toolbar span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---------- Shop additions: product cards, details, cart, orders ---------- */
+
+.toolbar input {
+  padding: 9px;
+  border: 1px solid #d7dce2;
+  border-radius: 5px;
+  font-size: 13px;
+  background: #fff;
+  min-width: 240px;
+}
+
+.chip-out {
+  background: #fdeeed;
+  color: #b3261e;
+}
+
+.chip-done {
+  background: #e6f4ea;
+  color: #1e6b34;
+}
+
+.item-card a.media {
+  text-decoration: none;
+}
+
+.item-body h3 a:hover {
+  color: var(--blue);
+}
+
+/* Product description on a card: at most 2 lines */
+.short-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.card-actions .button:disabled,
+.buy-row .button:disabled {
+  background: #c5ccd4;
+  cursor: not-allowed;
+}
+
+/* Product details page */
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.detail-image {
+  aspect-ratio: 4 / 3;
+  background: var(--soft);
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-info h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  word-break: break-word;
+}
+
+.detail-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--blue);
+  margin: 0 0 10px;
+}
+
+.stock-note {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.detail-info .full-desc {
+  white-space: pre-wrap;
+  font-size: 14px;
+  color: var(--muted);
+  word-break: break-word;
+}
+
+.buy-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.buy-row input,
+.qty-input {
+  width: 80px;
+  padding: 9px;
+  border: 1px solid #d7dce2;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+/* Cart page */
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  align-items: start;
+}
+
+.cart-summary .button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.total-line {
+  font-size: 18px;
+  font-weight: 700;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.manage-row .actions .qty-input {
+  width: 70px;
+}
+
+/* Orders (customer and admin) */
+.order-box {
+  margin-bottom: 14px;
+}
+
+.order-date {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: var(--muted);
+  word-break: break-word;
+}
+
+.order-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.order-lines li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.order-total {
+  text-align: right;
+  font-weight: 700;
+  margin: 12px 0 0;
+}
+
+.order-box .button {
+  margin-top: 4px;
+}
+
+/* Edit profile form on the dashboard */
+.edit-card {
+  max-width: none;
+  margin: 0 0 18px;
+}
+
+/* ---------- Small screens ---------- */
+
+/* Tablet: put the form above the list */
+@media (max-width: 900px) {
+
+  .manage-layout,
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Phone: everything in one column */
+@media (max-width: 760px) {
+
+  .dash-grid,
+  .quick-links,
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .manage-row {
+    flex-wrap: wrap;
+  }
+
+  .manage-row .actions {
+    width: 100%;
+  }
+
+  .profile-list div {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

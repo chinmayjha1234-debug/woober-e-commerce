@@ -1,0 +1,30 @@
+/* Simplified page styling */
+.about-art {
+    background: #edf4fa
+}
+
+.orbit {
+    width: 160px;
+    height: 160px;
+    border: 2px solid #9dbbd7;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 75px;
+    font-weight: 700;
+    color: var(--blue);
+    position: relative
+}
+
+.orbit:before,
+.orbit:after {
+    display: none
+}
+
+.orbit span {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 20px;
+    color: #d39a2d
+}

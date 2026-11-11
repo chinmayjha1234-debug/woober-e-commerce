@@ -1,0 +1,15 @@
+/* Simplified page styling */
+.store-form {
+    max-width: 650px
+}
+
+.store-form h2 {
+    font-size: 24px;
+    margin: 8px 0
+}
+
+.form-hint {
+    font-size: 10px;
+    color: #777;
+    margin-top: 10px
+}

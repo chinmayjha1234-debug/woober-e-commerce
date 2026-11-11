@@ -1,0 +1,73 @@
+/* Simplified page styling */
+.auth-page {
+    min-height: 100vh;
+    background: #f4f7fa;
+    display: flex;
+    flex-direction: column
+}
+
+.auth-page .site-header {
+    position: relative
+}
+
+.auth-main {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    padding: 40px 18px
+}
+
+.auth-card {
+    width: min(100%, 440px)
+}
+
+.auth-card h1 {
+    font-size: 27px;
+    margin: 8px 0 3px
+}
+
+.auth-card>p {
+    font-size: 13px;
+    color: var(--muted)
+}
+
+.auth-card>.button {
+    width: 100%
+}
+
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 11px
+}
+
+.auth-options a,
+.signup-line a {
+    color: var(--blue);
+    font-weight: 600
+}
+
+.auth-options .remember {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0
+}
+
+.auth-options input {
+    width: auto
+}
+
+.signup-line {
+    text-align: center;
+    margin-top: 18px !important
+}
+
+.auth-footer {
+    text-align: center;
+    padding: 18px;
+    font-size: 10px;
+    color: #777
+}

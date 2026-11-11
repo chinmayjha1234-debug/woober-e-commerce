@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create an account — Woober</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="store.css">
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-fallback">woober<span>.</span></span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav"><a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <!-- The login / logout buttons and the links for logged-in users are added by JS/api.js -->
+    <div class="header-actions"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <span class="eyebrow">JOIN WOOBER</span>
+      <h1>Create your<br>account.</h1>
+      <p>Sign up to save your cart and see your order history.</p>
+    </section>
+    <section class="content-section section-wrap">
+      <form class="form-card store-form" id="registerForm">
+        <span class="section-kicker">NEW ACCOUNT</span>
+        <h2>Your details</h2>
+        <label for="registerName">Full name</label>
+        <input id="registerName" required maxlength="100" placeholder="e.g. Asha Verma">
+        <label for="registerEmail">Email address</label>
+        <input id="registerEmail" type="email" required placeholder="you@example.com">
+        <label for="registerPassword">Password</label>
+        <input id="registerPassword" type="password" required minlength="6" placeholder="At least 6 characters">
+        <label for="registerPassword2">Confirm password</label>
+        <input id="registerPassword2" type="password" required minlength="6" placeholder="Type the password again">
+        <button class="button button-blue" type="submit">Create account →</button>
+        <p class="form-message error" id="registerMessage" aria-live="polite"></p>
+        <p class="form-hint">Already have an account? <a href="login.html" style="color:var(--blue);font-weight:600">Log in</a></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>© <span class="year"></span> Woober. All rights reserved.</p>
+      <a href="index.html">Back to home ↑</a>
+    </div>
+  </footer>
+
+  <script src="JS/api.js"></script>
+  <script src="JS/script.js"></script>
+</body>
+</html>

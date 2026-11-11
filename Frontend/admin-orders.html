@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All orders — Woober</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="user.css">
+</head>
+<body class="user-page" id="top">
+
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-fallback">woober<span>.</span></span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav"><a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <!-- The login / logout buttons and the links for logged-in users are added by JS/api.js -->
+    <div class="header-actions"></div>
+  </header>
+
+  <main>
+    <section class="user-hero">
+      <div class="section-wrap">
+        <span class="eyebrow">ADMIN</span>
+        <h1>Customer orders</h1>
+        <p>Every order placed in the shop.</p>
+      </div>
+    </section>
+
+    <div class="section-wrap user-main">
+      <div class="panel-head" style="margin-bottom:14px">
+        <span id="count" class="chip"></span>
+      </div>
+      <p id="pageMessage" class="form-message" aria-live="polite"></p>
+      <div id="orderList"><p class="empty">Loading...</p></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>© <span class="year"></span> Woober. All rights reserved.</p>
+      <a href="index.html">Back to home ↑</a>
+    </div>
+  </footer>
+
+  <script src="JS/api.js"></script>
+  <script src="JS/script.js"></script>
+  <script src="JS/admin-orders.js"></script>
+</body>
+</html>

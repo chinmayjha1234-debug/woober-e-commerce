@@ -1,0 +1,53 @@
+/* Simplified page styling */
+.contact-layout {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 45px;
+    align-items: start
+}
+
+.contact-info h2 {
+    font-size: 34px;
+    line-height: 1.2;
+    margin: 12px 0
+}
+
+.contact-info>p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 25px
+}
+
+.contact-detail {
+    padding: 13px 0;
+    border-top: 1px solid var(--line);
+    font-size: 13px
+}
+
+.contact-detail b,
+.contact-detail a,
+.contact-detail span {
+    display: block
+}
+
+.contact-detail b {
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 4px
+}
+
+.contact-detail a:hover {
+    color: var(--blue)
+}
+
+.form-card h2 {
+    font-size: 22px;
+    margin: 5px 0
+}
+
+@media(max-width:760px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 30px
+    }
+}

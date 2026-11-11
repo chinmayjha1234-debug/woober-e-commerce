@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account — Woober</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="user.css">
+</head>
+<body class="user-page" id="top">
+
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-fallback">woober<span>.</span></span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav"><a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <!-- The login / logout buttons and the links for logged-in users are added by JS/api.js -->
+    <div class="header-actions"></div>
+  </header>
+
+  <main>
+    <section class="user-hero">
+      <div class="section-wrap">
+        <span class="eyebrow">YOUR ACCOUNT</span>
+        <h1>Welcome, <span id="welcomeName">...</span>!</h1>
+        <p id="subtitle">Here's a quick look at your account and your orders.</p>
+      </div>
+    </section>
+
+    <div class="section-wrap user-main">
+      <!-- Profile and overview side by side -->
+      <div class="dash-grid">
+        <section class="panel">
+          <h2>Your profile</h2>
+          <dl class="profile-list">
+            <div><dt>Name</dt><dd id="pName"></dd></div>
+            <div><dt>Email</dt><dd id="pEmail"></dd></div>
+            <div><dt>Account type</dt><dd id="pRole"></dd></div>
+            <div><dt>Member since</dt><dd id="pSince"></dd></div>
+          </dl>
+        </section>
+
+        <section class="panel">
+          <h2>Overview</h2>
+          <div class="stat-row" id="stats"></div>
+        </section>
+      </div>
+
+      <!-- Quick links (filled in by dashboard.js, different for customers and admins) -->
+      <div class="quick-links" id="links"></div>
+
+      <!-- Update the profile -->
+      <form class="form-card edit-card" id="profileForm">
+        <span class="section-kicker">EDIT PROFILE</span>
+        <label for="editName">Name</label>
+        <input id="editName" required maxlength="100">
+        <label for="editEmail">Email address</label>
+        <input id="editEmail" type="email" required>
+        <label for="currentPassword">Current password (only to change your password)</label>
+        <input id="currentPassword" type="password" autocomplete="current-password">
+        <label for="newPassword">New password (leave empty to keep your password)</label>
+        <input id="newPassword" type="password" minlength="6" autocomplete="new-password" placeholder="At least 6 characters">
+        <button class="button button-blue" type="submit">Save profile</button>
+        <p class="form-message" id="profileMessage" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>© <span class="year"></span> Woober. All rights reserved.</p>
+      <a href="index.html">Back to home ↑</a>
+    </div>
+  </footer>
+
+  <script src="JS/api.js"></script>
+  <script src="JS/script.js"></script>
+  <script src="JS/dashboard.js"></script>
+</body>
+</html>
